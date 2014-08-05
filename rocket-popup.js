@@ -8,16 +8,28 @@ $(document).ready(function() {
 		}
 	});
 
+
 	$('.rkt-launcher').click(function(e) {
 		e.stopPropagation();
 		$('.rkt-atmosphere').addClass('overcast');
 		var launcher = $(this),
 			shuttle = $('.rkt-shuttle');
+
 		if (launcher.data('width')) {
-			shuttle.css('width', launcher.data('width'));
+			shuttle.css('width', launcher.data('width') + (shuttle.innerWidth() - shuttle.width()));
 		}
+		if (launcher.data('height')) {
+			shuttle.css('height', launcher.data('height') + (shuttle.innerHeight() - shuttle.innerHeight()));
+		}
+
+		if (launcher.data('max-width')) {
+			shuttle.css('max-width', launcher.data('width') + (shuttle.innerWidth() - shuttle.width()));
+		}
+		if (launcher.data('max-height')) {
+			shuttle.css('max-height', launcher.data('height') + (shuttle.innerHeight() - shuttle.innerHeight()));
+		}
+
 		shuttle.html(launcher.data('cargo'));
-		$('.slider').slick();
 
 		if (launcher.data('flight-plan')) {
 			eval(launcher.data('flight-plan'));
