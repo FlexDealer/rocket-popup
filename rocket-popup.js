@@ -19,14 +19,14 @@ $(document).ready(function() {
 			shuttle.css('width', launcher.data('width') + (shuttle.innerWidth() - shuttle.width()));
 		}
 		if (launcher.data('height')) {
-			shuttle.css('height', launcher.data('height') + (shuttle.innerHeight() - shuttle.innerHeight()));
+			shuttle.css('height', launcher.data('height') + (shuttle.innerHeight() - shuttle.height()));
 		}
 
 		if (launcher.data('max-width')) {
 			shuttle.css('max-width', launcher.data('width') + (shuttle.innerWidth() - shuttle.width()));
 		}
 		if (launcher.data('max-height')) {
-			shuttle.css('max-height', launcher.data('height') + (shuttle.innerHeight() - shuttle.innerHeight()));
+			shuttle.css('max-height', launcher.data('height') + (shuttle.innerHeight() - shuttle.height()));
 		}
 
 		shuttle.html(launcher.data('cargo'));
