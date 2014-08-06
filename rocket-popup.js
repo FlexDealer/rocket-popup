@@ -15,6 +15,8 @@ $(document).ready(function() {
 		var launcher = $(this),
 			shuttle = $('.rkt-shuttle');
 
+		shuttle.attr('style', '');
+
 		if (launcher.data('width')) {
 			shuttle.css('width', launcher.data('width') + (shuttle.innerWidth() - shuttle.width()));
 		}
@@ -23,10 +25,10 @@ $(document).ready(function() {
 		}
 
 		if (launcher.data('max-width')) {
-			shuttle.css('max-width', launcher.data('width') + (shuttle.innerWidth() - shuttle.width()));
+			shuttle.css('max-width', launcher.data('max-width') + (shuttle.innerWidth() - shuttle.width()));
 		}
 		if (launcher.data('max-height')) {
-			shuttle.css('max-height', launcher.data('height') + (shuttle.innerHeight() - shuttle.height()));
+			shuttle.css('max-height', launcher.data('max-height') + (shuttle.innerHeight() - shuttle.height()));
 		}
 
 		shuttle.html(launcher.data('cargo'));
