@@ -11,15 +11,17 @@ html, body, .overcast {
 	height: 100%;
 	width: 100%;
 	z-index: 10;
-	background-color: rgba(0,0,0,0.3);
+	background-color: #000000;
+	opacity: 0.3;
 }
 .overcast {
-	-webkit-filter: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSI+CiAgPGRlZnM+CiAgICA8ZmlsdGVyIGlkPSJibHVyIj4KICAgICAgPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iNSIgLz4KICAgIDwvZmlsdGVyPgogIDwvZGVmcz4KPC9zdmc+);
-	        filter: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSI+CiAgPGRlZnM+CiAgICA8ZmlsdGVyIGlkPSJibHVyIj4KICAgICAgPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iNSIgLz4KICAgIDwvZmlsdGVyPgogIDwvZGVmcz4KPC9zdmc+);
-	-webkit-filter: blur(1px);
-	        filter: blur(1px);
+	-webkit-filter: blur(3px);
+	        filter: blur(3px);
 }
 
+.rkt-launcher {
+	cursor: pointer;
+}
 
 .rkt-shuttle {
 	max-width: 90%;
