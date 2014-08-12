@@ -22,6 +22,11 @@ html, body, .overcast {
 .rkt-launcher {
 	cursor: pointer;
 }
+.rkt-launcher.zoom-in {
+	cursor: -webkit-zoom-in;
+	cursor:    -moz-zoom-in;
+	cursor:         zoom-in;
+}
 
 .rkt-shuttle {
 	max-width: 90%;
