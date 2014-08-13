@@ -1,33 +1,33 @@
 $(document).ready(function() {
-	$('body').append('<div class="rkt-shuttle"></div>');
+	$('body').append('<div id="rkt-shuttle"></div>');
 	
-	$('body').on('click', "div", function() {
-		if ($(this).hasClass('overcast')) {
-			var shuttle = $('.rkt-shuttle');
-			shuttle.removeClass('orbiting');
-
+	$('body').on('click', "div", function(e) {
+		var shuttle = $('#rkt-shuttle');
+		if ($(this).hasClass('rkt-overcast') || ($(this).hasClass('rkt-shuttle') && ((e.offsetX + 9 - shuttle.innerWidth()) > 0) && (e.offsetY < 9))) {
+			shuttle.removeClass('rkt-orbiting');
 			setTimeout(landingSequence, 500);
 		}
 	});
 
 	function landingSequence() {
-		var shuttle = $('.rkt-shuttle');
+		var shuttle = $('#rkt-shuttle');
 		if (shuttle.data('landing-squence')) {
 			eval(shuttle.data('landing-squence'));
 		}
-		$('.rkt-atmosphere').removeClass('overcast');
+		$('.rkt-atmosphere').removeClass('rkt-overcast');
 		shuttle.html('');
 	}
 
 
 	$('.rkt-launcher').click(function(e) {
 		e.stopPropagation();
-		$('.rkt-atmosphere').addClass('overcast');
+		$('.rkt-atmosphere').addClass('rkt-overcast');
 		var launcher = $(this),
-			shuttle = $('.rkt-shuttle');
+			shuttle = $('#rkt-shuttle');
 
 		shuttle.attr('style', '');
 		shuttle.attr('data-landing-squence', '');
+		shuttle.attr('class', '');
 
 		if (launcher.data('width')) {
 			shuttle.css('width', launcher.data('width') + (shuttle.innerWidth() - shuttle.width()));
@@ -51,7 +51,10 @@ $(document).ready(function() {
 		if (launcher.data('landing-squence')) {
 			shuttle.attr('data-landing-squence', launcher.data('landing-squence'));
 		}
+		if (launcher.data('class')) {
+			shuttle.addClass(launcher.data('class'));
+		}
 
-		shuttle.addClass('orbiting');
+		shuttle.addClass('rkt-orbiting');
 	});
 });

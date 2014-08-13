@@ -1,8 +1,8 @@
-html, body, .overcast {
+html, body, .rkt-overcast {
 	min-height: 100%;
 }
 
-.overcast:before {
+.rkt-overcast:before {
 	content: "";
 	display: block;
 	position: fixed;
@@ -14,7 +14,7 @@ html, body, .overcast {
 	background-color: #000000;
 	opacity: 0.3;
 }
-.overcast {
+.rkt-overcast {
 	-webkit-filter: blur(3px);
 	        filter: blur(3px);
 }
@@ -22,13 +22,13 @@ html, body, .overcast {
 .rkt-launcher {
 	cursor: pointer;
 }
-.rkt-launcher.zoom-in {
+.rkt-launcher.rkt-zoom-in {
 	cursor: -webkit-zoom-in;
 	cursor:    -moz-zoom-in;
 	cursor:         zoom-in;
 }
 
-.rkt-shuttle {
+#rkt-shuttle {
 	max-width: 90%;
 	position: fixed;
 	top: -1000px;
@@ -46,7 +46,25 @@ html, body, .overcast {
 	        transition: all 1s ease;
 }
 
-.rkt-shuttle.orbiting {
+#rkt-shuttle:not(.rkt-no-x):after {
+	width: 20px;
+	height: 20px;
+	content: 'X';
+	border: 2px solid #fff;
+	border-radius: 15px;
+	background-color: #000;
+	color: #fff;
+	text-align: center;
+	font-size: 14px;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	line-height: 21px;
+	position: absolute;
+	top: -15px;
+	right: -15px;
+	cursor: pointer;
+}
+
+#rkt-shuttle.rkt-orbiting {
 	top: 50%;
 	opacity: 1;
 }
