@@ -3,7 +3,7 @@ $(document).ready(function() {
 	
 	$('body').on('click', "div", function(e) {
 		var shuttle = $('#rkt-shuttle');
-		if ($(this).hasClass('rkt-overcast') || ($(this).hasClass('rkt-shuttle') && ((e.offsetX + 9 - shuttle.innerWidth()) > 0) && (e.offsetY < 9))) {
+		if ($(this).hasClass('rkt-overcast') || (($(this).attr('id') == 'rkt-shuttle') && ((e.offsetX + 9 - shuttle.innerWidth()) > 0) && (e.offsetY < 9))) {
 			shuttle.removeClass('rkt-orbiting');
 			setTimeout(landingSequence, 500);
 		}
