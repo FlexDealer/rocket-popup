@@ -89,8 +89,7 @@ This example uses a great carousel plugin called [Owl Carousel](http://owlcarous
 											<div class="item-video">
 												<a class="owl-video" href="https://www.youtube.com/watch?v=ViBzl1eQT0A"></a>
 											</div>
-										</div>
-									'>
+										</div>'>
 				Modal 3
 			</a>
 		</div>
