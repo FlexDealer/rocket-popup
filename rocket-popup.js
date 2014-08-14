@@ -11,8 +11,8 @@ $(document).ready(function() {
 
 	function landingSequence() {
 		var shuttle = $('#rkt-shuttle');
-		if (shuttle.data('landing-squence')) {
-			eval(shuttle.data('landing-squence'));
+		if (shuttle.data('landing-sequence')) {
+			eval(shuttle.data('landing-sequence'));
 		}
 		$('.rkt-atmosphere').removeClass('rkt-overcast');
 		shuttle.html('');
@@ -26,7 +26,7 @@ $(document).ready(function() {
 			shuttle = $('#rkt-shuttle');
 
 		shuttle.attr('style', '');
-		shuttle.attr('data-landing-squence', '');
+		shuttle.attr('data-landing-sequence', '');
 		shuttle.attr('class', '');
 
 		if (launcher.data('width')) {
@@ -34,6 +34,13 @@ $(document).ready(function() {
 		}
 		if (launcher.data('height')) {
 			shuttle.css('height', launcher.data('height') + (shuttle.innerHeight() - shuttle.height()));
+		}
+
+		if (launcher.data('min-width')) {
+			shuttle.css('min-width', launcher.data('min-width') + (shuttle.innerWidth() - shuttle.width()));
+		}
+		if (launcher.data('min-height')) {
+			shuttle.css('min-height', launcher.data('min-height') + (shuttle.innerHeight() - shuttle.height()));
 		}
 
 		if (launcher.data('max-width')) {
@@ -48,8 +55,8 @@ $(document).ready(function() {
 		if (launcher.data('flight-plan')) {
 			eval(launcher.data('flight-plan'));
 		}
-		if (launcher.data('landing-squence')) {
-			shuttle.attr('data-landing-squence', launcher.data('landing-squence'));
+		if (launcher.data('landing-sequence')) {
+			shuttle.attr('data-landing-sequence', launcher.data('landing-sequence'));
 		}
 		if (launcher.data('class')) {
 			shuttle.addClass(launcher.data('class'));
