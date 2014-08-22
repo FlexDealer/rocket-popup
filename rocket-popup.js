@@ -1,10 +1,9 @@
 $(document).ready(function() {
 	$('body').append('<div id="rkt-shuttle"></div>');
 	
-	$('body').on('click', "div", function(e) {
-		var shuttle = $('#rkt-shuttle');
-		if ($(this).hasClass('rkt-overcast') || (($(this).attr('id') == 'rkt-shuttle') && ((e.offsetX + 9 - shuttle.innerWidth()) > 0) && (e.offsetY < 9))) {
-			shuttle.removeClass('rkt-orbiting');
+	$('body').on('touchstart click', "div", function(e) {
+		if ($(this).hasClass('rkt-overcast') || (($(this).hasClass('rkt-x')))) {
+			$('#rkt-shuttle').removeClass('rkt-orbiting');
 			setTimeout(landingSequence, 500);
 		}
 	});
@@ -50,7 +49,7 @@ $(document).ready(function() {
 			shuttle.css('max-height', launcher.data('max-height') + (shuttle.innerHeight() - shuttle.height()));
 		}
 
-		shuttle.html(launcher.data('cargo'));
+		shuttle.html(launcher.data('cargo') + '<div class="rkt-x">X</div>');
 
 		if (launcher.data('flight-plan')) {
 			eval(launcher.data('flight-plan'));

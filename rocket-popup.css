@@ -29,7 +29,8 @@ html, body, .rkt-overcast {
 }
 
 #rkt-shuttle {
-	max-width: 90%;
+	max-width: 86%;
+	max-height: 86%;
 	position: fixed;
 	top: -1000px;
 	left: 50%;
@@ -46,10 +47,10 @@ html, body, .rkt-overcast {
 	        transition: all 1s ease;
 }
 
-#rkt-shuttle:not(.rkt-no-x):after {
+#rkt-shuttle:not(.rkt-no-x) .rkt-x {
+	display: block;
 	width: 20px;
 	height: 20px;
-	content: 'X';
 	border: 2px solid #fff;
 	border-radius: 15px;
 	background-color: #000;
@@ -62,6 +63,10 @@ html, body, .rkt-overcast {
 	top: -15px;
 	right: -15px;
 	cursor: pointer;
+}
+
+#rkt-shuttle .rkt-x {
+	display: none;
 }
 
 #rkt-shuttle.rkt-orbiting {
