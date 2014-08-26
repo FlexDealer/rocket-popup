@@ -64,13 +64,13 @@ html, body, .rkt-overcast {
 	right: -15px;
 	cursor: pointer;
 }
-
 #rkt-shuttle .rkt-x {
 	display: none;
 }
 
 #rkt-shuttle iframe {
 	border: none;
+	box-sizing: border-box;
 }
 
 #rkt-shuttle.rkt-orbiting {
