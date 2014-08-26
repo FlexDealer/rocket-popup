@@ -35,21 +35,21 @@ $(document).ready(function() {
 			shuttle.css('height', launcher.data('height') + (shuttle.innerHeight() - shuttle.height()));
 		}
 
-		if (launcher.data('min-width')) {
-			shuttle.css('min-width', launcher.data('min-width') + (shuttle.innerWidth() - shuttle.width()));
-		}
-		if (launcher.data('min-height')) {
-			shuttle.css('min-height', launcher.data('min-height') + (shuttle.innerHeight() - shuttle.height()));
-		}
 
-		if (launcher.data('max-width')) {
-			shuttle.css('max-width', launcher.data('max-width') + (shuttle.innerWidth() - shuttle.width()));
+		if (launcher.data('cargo')) {
+			shuttle.html(launcher.data('cargo') + '<div class="rkt-x">X</div>');
+		} else if (launcher.attr('rel') == 'image') {
+			shuttle.html('<img style="width:100%; height:auto;" src="' + launcher.attr('href') + '">' + '<div class="rkt-x">X</div>');
+		} else {
+			shuttle.html('<iframe style="width:100%; height:100%;" src="' + launcher.attr('href') + '"></iframe>' + '<div class="rkt-x">X</div>');
+			if (!launcher.data('width')) {
+				shuttle.css('width', 800 + (shuttle.innerWidth() - shuttle.width()));
+			}
+			if (!launcher.data('height')) {
+				shuttle.css('height', 550 + (shuttle.innerHeight() - shuttle.height()));
+			}
 		}
-		if (launcher.data('max-height')) {
-			shuttle.css('max-height', launcher.data('max-height') + (shuttle.innerHeight() - shuttle.height()));
-		}
-
-		shuttle.html(launcher.data('cargo') + '<div class="rkt-x">X</div>');
+		
 
 		if (launcher.data('flight-plan')) {
 			eval(launcher.data('flight-plan'));

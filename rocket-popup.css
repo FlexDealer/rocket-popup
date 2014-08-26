@@ -69,6 +69,10 @@ html, body, .rkt-overcast {
 	display: none;
 }
 
+#rkt-shuttle iframe {
+	border: none;
+}
+
 #rkt-shuttle.rkt-orbiting {
 	top: 50%;
 	opacity: 1;
