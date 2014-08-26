@@ -49,7 +49,7 @@ $(document).ready(function() {
 				shuttle.css('height', 550 + (shuttle.innerHeight() - shuttle.height()));
 			}
 		}
-		
+
 
 		if (launcher.data('flight-plan')) {
 			eval(launcher.data('flight-plan'));
@@ -62,5 +62,6 @@ $(document).ready(function() {
 		}
 
 		shuttle.addClass('rkt-orbiting');
+		return false;
 	});
 });
