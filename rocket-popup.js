@@ -32,8 +32,6 @@ $(document).ready(function() {
 		var paddingX = Number(shuttle.css('padding-left').replace(/[^-\d\.]/g, '')) + Number(shuttle.css('padding-right').replace(/[^-\d\.]/g, '')),
 			paddingY = Number(shuttle.css('padding-top').replace(/[^-\d\.]/g, '')) + Number(shuttle.css('padding-bottom').replace(/[^-\d\.]/g, ''));
 
-		console.log(paddingX, paddingY);
-
 		if (launcher.data('width')) {
 			shuttle.css('width', Number(launcher.data('width')) + paddingX);
 		}
