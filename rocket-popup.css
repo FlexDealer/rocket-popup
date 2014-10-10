@@ -2,6 +2,11 @@ html, body, .rkt-overcast {
 	min-height: 100%;
 }
 
+#rkt-shuttle, #rkt-shuttle > .rkt-x {
+	box-sizing: border-box;
+}
+
+
 .rkt-overcast:before {
 	content: "";
 	display: block;
@@ -47,6 +52,16 @@ html, body, .rkt-overcast {
 	        transition: all 1s ease;
 }
 
+#rkt-shuttle.rkt-no-padding {
+	padding: 0;
+}
+#rkt-shuttle.rkt-no-bkg {
+	background-color: transparent;
+}
+#rkt-shuttle.rkt-no-padding iframe {
+	border-radius: 5px;
+}
+
 #rkt-shuttle:not(.rkt-no-x) .rkt-x {
 	display: block;
 	width: 20px;
@@ -56,9 +71,9 @@ html, body, .rkt-overcast {
 	background-color: #000;
 	color: #fff;
 	text-align: center;
-	font-size: 14px;
+	font-size: 13px;
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-	line-height: 21px;
+	line-height: 18px;
 	position: absolute;
 	top: -15px;
 	right: -15px;
