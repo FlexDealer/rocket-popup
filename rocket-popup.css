@@ -79,6 +79,10 @@ html, body, .rkt-overcast {
 	right: -15px;
 	cursor: pointer;
 }
+#rkt-shuttle.rkt-no-padding:not(.rkt-no-x) .rkt-x {
+	top: -12px;
+	right: -12px;
+}
 #rkt-shuttle .rkt-x {
 	display: none;
 }
@@ -91,4 +95,22 @@ html, body, .rkt-overcast {
 #rkt-shuttle.rkt-orbiting {
 	top: 50%;
 	opacity: 1;
+}
+
+#rkt-shuttle .owl-carousel,
+#rkt-shuttle .owl-carousel .owl-stage-outer,
+#rkt-shuttle .owl-carousel .owl-stage-outer .owl-stage,
+#rkt-shuttle .owl-carousel .owl-stage-outer .owl-stage .owl-item
+{
+	height: 100%;
+}
+#rkt-shuttle .owl-carousel .owl-stage-outer .owl-stage .owl-item img
+{
+	max-height: 100%;
+}
+#rkt-shuttle .owl-carousel .owl-theme .owl-controls
+{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 }

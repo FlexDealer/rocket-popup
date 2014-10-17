@@ -13,15 +13,13 @@ $(document).ready(function() {
 
 
 	$('.rkt-launcher').click(function(e) {
+		var launcher = $(this);
+		if ((launcher.data('disable-below')) && $(window).width() < launcher.data('disable-below')) {
+			return true;
+		}
 		e.preventDefault();
 		e.stopPropagation();
 
-		var launcher = $(this);
-		
-		if ((launcher.data('disable-below')) && $(window).width() < launcher.data('disable-below')) {
-			return false;
-		}
-		
 		launch({
 			url:             launcher.attr('href'),
 			flightPlan:      launcher.data('flight-plan'),
